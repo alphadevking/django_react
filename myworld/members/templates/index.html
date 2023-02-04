@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        a{
+            color: black;
+            transition: all .5s;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+        td{
+            padding: 5px 12px;
+        }
+
+        .btn{
+            padding: 5px 12px;
+            font-size: small;
+            border-radius: 10px;
+            background-color: rgba(89, 156, 22, 0.5);
+            color: rgba(0, 0, 0, 0.508);
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Members</h1>
+
+    <table border="1">
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+            <td>
+                <a class="btn" href="delete/{{ x.id }}">Del</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        <a href="add/">Add new member</a>
+    </p>
+
+</body>
+</html>
