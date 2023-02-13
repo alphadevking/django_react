@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome {{ firstname }}</title>
+</head>
+<body>
+    <h1>Hello {{ firstname }}, how are you?</h1>
+    {% with guestname='Tobias' %}
+    <h3>Do you know {{ guestname }}?</h3>
+    <ul>
+        {% for x in mymembers %}
+        <li>{{ x.firstname }}</li>
+        {% endfor %}
+    </ul>
+    {% endwith %}
+    {% for x in cars %}
+    <h1>{{ x.brand }}</h1>
+    <p>{{ x.model }}</p>
+    <p>{{ x.year }}</p>
+    {% endfor %}
+</body>
+</html>
